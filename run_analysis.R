@@ -59,7 +59,7 @@ data_mean_std$Activity<- factor(data_mean_std$Activity,levels = activity$V1, lab
 setkey(data_mean_std, ID, Activity)
 
 ## save table to outcome dir
-write.table(data_mean_std, paste0(outcomepath, "/data_mean_std.csv"),
+write.table(data_mean_std, paste0(outcomepath, "/data_mean_std.txt"),
             sep=",",row.names=FALSE,quote=FALSE)
 
 ##5. From the data set in step 4, creates a second, independent tidy data set
@@ -73,5 +73,5 @@ newname[-c(1:2)]<-paste0(newname[-c(1:2)],"_mean")
 colnames(data_tidy)<- newname
 
 ## save table to outcome dir
-write.table(data_tidy, paste0(outcomepath, "/data_tidy.csv"),
+write.table(data_tidy, paste0(outcomepath, "/data_tidy.txt"),
             sep=",",row.names=FALSE,quote=FALSE)
